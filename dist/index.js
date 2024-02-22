@@ -28983,7 +28983,7 @@ async function run() {
         });
         const nextMilestoneExists = check.repository.milestone != null;
         const { repository } = await client.graphql({
-            query: `query issues($owner: String!, $name: String!, $milestone: Int, $first: Int) {
+            query: `query issues($owner: String!, $name: String!, $milestone: Int!, $first: Int) {
         repository(owner: $owner, name: $name) {
           milestone(number: $milestone) {
             title

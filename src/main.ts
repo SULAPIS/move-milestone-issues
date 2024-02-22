@@ -27,7 +27,7 @@ export async function run(): Promise<void> {
     const nextMilestoneExists = check.repository.milestone != null
 
     const { repository } = await client.graphql<GraphQlQueryResponseData>({
-      query: `query issues($owner: String!, $name: String!, $milestone: Int, $first: Int) {
+      query: `query issues($owner: String!, $name: String!, $milestone: Int!, $first: Int) {
         repository(owner: $owner, name: $name) {
           milestone(number: $milestone) {
             title
