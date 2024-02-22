@@ -12,7 +12,7 @@ export async function run(): Promise<void> {
 
     const client = getOctokit(accessToken)
 
-    const { check } = await client.graphql<GraphQlQueryResponseData>({
+    const check = await client.graphql<GraphQlQueryResponseData>({
       query: `query checkMilestoneExists($owner: String!, $name: String!, $milestone: Int!) {
         repository(owner: $owner, name: $name) {
           milestone(number: $milestone) {
