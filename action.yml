@@ -1,23 +1,23 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: "The name of your action here"
+description: "Provide a description here"
+author: "Your name or organization here"
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: 'heart'
-  color: 'red'
+  icon: "heart"
+  color: "red"
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
-    required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
+  github-token:
+    description: "The GitHub token to use"
+    default: ${{ github.token }}
+  milestone:
+    description: "The milestone to close"
+    default: ${{ github.event.milestone.number }}
+  issues-count:
+    description: "The max number of issues to close"
+    default: "50"
 
 runs:
   using: node20
