@@ -28970,7 +28970,7 @@ async function run() {
         const name = github_1.context.payload.repository?.name;
         const client = (0, github_1.getOctokit)(accessToken);
         const { check } = await client.graphql({
-            query: `query checkMilestoneExists($owner: String!, $name: String!, $milestone: Int) {
+            query: `query checkMilestoneExists($owner: String!, $name: String!, $milestone: Int!) {
         repository(owner: $owner, name: $name) {
           milestone(number: $milestone) {
             title
